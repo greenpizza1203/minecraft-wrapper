@@ -8,7 +8,7 @@ const {spawn} = require("child_process");
 const axios = Axios.create({
     baseURL: process.env.DEV ? "http://localhost:8080" : "https://limelight-bot.herokuapp.com"
 })
-const ls = spawn('java', ["-Xms1G", "-Xmx6G", "-jar", "server.jar", "nogui"], {cwd: path.join(__dirname, "../minecraft")});
+const ls = spawn('java', ["-Xms2G", "-Xmx6G", "-jar", "server.jar", "nogui"], {cwd: path.join(__dirname, "../minecraft")});
 ls.on('close', (code) => console.log(`child process exited with code ${code}`));
 ls.stderr.on('data', console.error);
 
